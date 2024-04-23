@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, Button, View, FlatList, Text } from 'react-native';
 
+
 export default function Library( navigation ) {
 
     const startingData = [];
@@ -37,15 +38,15 @@ export default function Library( navigation ) {
         renderItem={({item}) => 
           <View>
             <TouchableOpacity onPress={ () => navigation.navigate('Information', {title: item.title, 
-            author: json.results.books[i].author, 
-            description: json.results.books[i].description, 
-            isbn: json.results.books[i].primary_isbn13}) }>
+              author: item.author, 
+              description: item.description, 
+              isbn: item.isbn}) }>
               <Text>{item.title}</Text>
             </TouchableOpacity>
           </View>
         } 
         />
-        <Button title="Add Books" onPress={ getBooks }/>
+          <Button title="Add Books" onPress={ getBooks }/>
         </View>
     );
 }
