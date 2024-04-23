@@ -36,7 +36,10 @@ export default function Library( navigation ) {
         <FlatList data={books} extraData={books}
         renderItem={({item}) => 
           <View>
-            <TouchableOpacity onPress={ () => navigation.navigate('Information', {title: item.title}) }>
+            <TouchableOpacity onPress={ () => navigation.navigate('Information', {title: item.title, 
+            author: json.results.books[i].author, 
+            description: json.results.books[i].description, 
+            isbn: json.results.books[i].primary_isbn13}) }>
               <Text>{item.title}</Text>
             </TouchableOpacity>
           </View>
@@ -45,3 +48,4 @@ export default function Library( navigation ) {
         <Button title="Add Books" onPress={ getBooks }/>
         </View>
     );
+}
