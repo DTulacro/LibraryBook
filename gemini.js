@@ -2,7 +2,7 @@ import{useState} from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View, Button, TextInput } from 'react-native';
 export default function Gemini({navigation}) {
     
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+//const { GoogleGenerativeAI } = require("@google/generative-ai");
 const [response, setResponse] = useState("");
 
 
