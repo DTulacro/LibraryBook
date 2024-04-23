@@ -30,10 +30,6 @@ export default function Library( navigation ) {
         });
         
     }
-    
-    function addBooks () {
-
-    }
 
     return (
         <View>
