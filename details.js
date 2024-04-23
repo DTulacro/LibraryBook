@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Details( navigation, route ) {
-    const {title, releaseYear} = route.params;
+    const {title, author, description, primary_isbn13} = route.params;
 
     return (
         <View style={styles.container}>
