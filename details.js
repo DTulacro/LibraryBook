@@ -8,7 +8,6 @@ export default function Details( navigation, route ) {
         <View style={styles.container}>
             <Text style={styles.item}>{title}</Text>
             <Text style={styles.item}>{author}</Text>    
-            <Text style={styles.item}>{published_date}</Text>
             <Text style={styles.item}>{description}</Text>
             <Text style={styles.item}>{primary_isbn13}</Text>
         </View>
