@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Library from './library';
 import Details from './details';
+import Gemini from './gemini';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,6 +15,7 @@ export default function App() {
       <Stack.Navigator initialRouteName='Library'>
         <Stack.Screen name="Library" component={Library} />
         <Stack.Screen name="Information" component={Details} />  
+        <Stack.Screen name="Gemini" component={Gemini}/>
       </Stack.Navigator>    
   </NavigationContainer>  
   );
