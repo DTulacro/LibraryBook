@@ -45,5 +45,3 @@ export default function Library( navigation ) {
         <Button title="Add Books" onPress={ getBooks }/>
         </View>
     );
-
-}
