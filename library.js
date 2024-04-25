@@ -15,7 +15,7 @@ export default function Library( {navigation} ) {
       .then((response) => response.json())
       .then((json) => {
         /* view the JSON that's returned in the server log */
-        console.log(json);
+        console.log(json.results.books[0]);
         for (i = 0; i < 15; i++) {
           let temp = {
             key: i,
