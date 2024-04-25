@@ -43,9 +43,9 @@ export default function Library( {navigation} ) {
       <Button title="Ask Gemini" onPress={()=>navigation.navigate('Gemini')}/>
       <FlatList data={books} extraData={books}
         renderItem={({ item }) =>
-          <View>
-            <TouchableOpacity onPress={ () => navigation.navigate( 'Information', { title: item.title, author: item.author, description: item.description, isbn: item.isbn, book_image: item.book_image, buy_links: item.buy_links} ) }>
-              <Text>{item.title}</Text>
+          <View style={{alignItems:'center', padding:12}}>
+            <TouchableOpacity style={{borderRadius:5, backgroundColor: '#147EFB', height: 30, width: 300, alignItems:'center', padding:8}} onPress={ () => navigation.navigate( 'Information', { title: item.title, author: item.author, description: item.description, isbn: item.isbn, book_image: item.book_image, buy_links: item.buy_links} ) }>
+              <Text style={{color:'white'}}>{item.title}</Text>
             </TouchableOpacity>
           </View>
         }
