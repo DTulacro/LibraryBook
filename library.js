@@ -23,8 +23,8 @@ export default function Library( {navigation} ) {
             author: json.results.books[i].author,
             description: json.results.books[i].description,
             isbn: json.results.books[i].primary_isbn13,
-            book_image: json.results.book[i].book_image,
-            buy_links: json.results.book[i].buy_links[0].url,
+            book_image: json.results.books[i].book_image,
+            buy_links: json.results.books[i].buy_links[0].url,
           };
           tempList.push(temp);
         }
@@ -44,13 +44,13 @@ export default function Library( {navigation} ) {
       <FlatList data={books} extraData={books}
         renderItem={({ item }) =>
           <View>
-            <TouchableOpacity onPress={ () => navigation.navigate( 'Information', { title: item.title, author: item.author, description: item.description, isbn: item.isbn} ) }>
+            <TouchableOpacity onPress={ () => navigation.navigate( 'Information', { title: item.title, author: item.author, description: item.description, isbn: item.isbn, book_image: item.book_image, buy_links: item.buy_links} ) }>
               <Text>{item.title}</Text>
             </TouchableOpacity>
           </View>
         }
       />
-      <Button title="Add Books" disabled = {button} onPress={getBooks} />
+      <Button title="Add Books" disabled = {false} onPress={getBooks} />
     </View>
   );
 }
