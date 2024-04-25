@@ -15,14 +15,16 @@ export default function Library( {navigation} ) {
       .then((response) => response.json())
       .then((json) => {
         /* view the JSON that's returned in the server log */
-        console.log(json);
+        console.log(json.results.books[0]);
         for (i = 0; i < 15; i++) {
           let temp = {
             key: i,
             title: json.results.books[i].title,
             author: json.results.books[i].author,
             description: json.results.books[i].description,
-            isbn: json.results.books[i].primary_isbn13
+            isbn: json.results.books[i].primary_isbn13,
+            book_image: json.results.book[i].book_image,
+            buy_links: json.results.book[i].buy_links[0].url,
           };
           tempList.push(temp);
         }
