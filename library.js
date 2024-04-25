@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TouchableOpacity, Button, View, FlatList, Text } from 'react-native';
 
 
-export default function Library( {navigation} ) {
+export default function Library({ navigation }) {
 
   const startingData = [];
 
@@ -34,23 +34,24 @@ export default function Library( {navigation} ) {
       .catch((error) => {
         console.error(error);
       });
-      setButton(true);
+    setButton(true);
 
   }
 
   return (
     <View>
-      <Button title="Ask Gemini" onPress={()=>navigation.navigate('Gemini')}/>
+      <Button title="Ask Gemini" onPress={() => navigation.navigate('Gemini')} />
       <FlatList data={books} extraData={books}
         renderItem={({ item }) =>
-          <View style={{alignItems:'center', padding:12}}>
-            <TouchableOpacity style={{borderRadius:5, backgroundColor: '#147EFB', height: 30, width: 300, alignItems:'center', padding:8}} onPress={ () => navigation.navigate( 'Information', { title: item.title, author: item.author, description: item.description, isbn: item.isbn, book_image: item.book_image, buy_links: item.buy_links} ) }>
-              <Text style={{color:'white'}}>{item.title}</Text>
+          <View style={{ alignItems: 'center', padding: 12 }}>
+            <TouchableOpacity style={{ borderRadius: 5, backgroundColor: '#147EFB', height: 30, width: 300, alignItems: 'center', padding: 8 }}
+              onPress={() => navigation.navigate('Information', { title: item.title, author: item.author, description: item.description, isbn: item.isbn, book_image: item.book_image, buy_links: item.buy_links })}>
+              <Text style={{ color: 'white' }}>{item.title}</Text>
             </TouchableOpacity>
           </View>
         }
       />
-      <Button title="Add Books" disabled = {button} onPress={getBooks} />
+      <Button title="Add Books" disabled={button} onPress={getBooks} />
     </View>
   );
 }

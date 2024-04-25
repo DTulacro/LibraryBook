@@ -15,10 +15,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="Library" component={Library} />
-        <Stack.Screen name="Information" component={Details} />  
-        <Stack.Screen name="Gemini" component={Gemini}/>
-      </Stack.Navigator>    
-  </NavigationContainer>  
+        <Stack.Screen name="Information" component={Details} />
+        <Stack.Screen name="Gemini" component={Gemini} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
