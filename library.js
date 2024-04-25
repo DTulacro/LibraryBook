@@ -38,6 +38,7 @@ export default function Library( {navigation} ) {
 
   return (
     <View>
+      <Button title="Ask Gemini" onPress={()=>navigation.navigate('Gemini')}/>
       <FlatList data={books} extraData={books}
         renderItem={({ item }) =>
           <View>
