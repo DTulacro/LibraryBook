@@ -1,5 +1,5 @@
 import{useState} from "react";
-import { FlatList, StyleSheet, Text, TouchableOpacity, View, Button, TextInput } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View, Button, TextInput, ScrollView } from 'react-native';
 
 export default function Gemini({navigation}) {
     
@@ -20,20 +20,23 @@ const handleSubmit = async () => {
 const [prompt, setPrompt] = useState("");
 
 return (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'powderblue' }}>
+    <ScrollView>
       <TextInput
-          style={{ height: 200, width: 300, borderColor: 'gray', borderWidth: 1 }}
+          style={{ height: 200, width: 300, borderColor: 'gray', borderWidth: 1, backgroundColor:'white', marginBottom:20 }}
           multiline={true}
           numberOfLines={10}
           placeholder="Enter a prompt here"
           value={prompt}
           onChangeText={(text) => setPrompt(text)}
       />
-      <Button
+      <TouchableOpacity style={{marginTop:30, borderColor:'black'}}
           title="Submit"
           onPress={handleSubmit}
-      />
-      <Text style={{ marginTop: 20 }}>{response}</Text>
+      >
+      </TouchableOpacity>
+      <Text style={{ marginTop:20, width:300, height:500, backgroundColor:'white' }}>{response}</Text>
+      </ScrollView>
   </View>
 );
 
