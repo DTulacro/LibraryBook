@@ -50,7 +50,7 @@ export default function Library( {navigation} ) {
           </View>
         }
       />
-      <Button title="Add Books" disabled = {false} onPress={getBooks} />
+      <Button title="Add Books" disabled = {button} onPress={getBooks} />
     </View>
   );
 }
