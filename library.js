@@ -7,6 +7,7 @@ export default function Library( {navigation} ) {
   const startingData = [];
 
   const [books, setBooks] = useState(startingData);
+  const [button, setButton] = useState(false);
 
   function getBooks() {
     let tempList = [];
@@ -31,6 +32,7 @@ export default function Library( {navigation} ) {
       .catch((error) => {
         console.error(error);
       });
+      setButton(true);
 
   }
 
@@ -45,7 +47,7 @@ export default function Library( {navigation} ) {
           </View>
         }
       />
-      <Button title="Add Books" onPress={getBooks} />
+      <Button title="Add Books" disabled = {button} onPress={getBooks} />
     </View>
   );
 }
