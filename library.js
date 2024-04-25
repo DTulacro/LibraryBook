@@ -22,7 +22,9 @@ export default function Library( {navigation} ) {
             title: json.results.books[i].title,
             author: json.results.books[i].author,
             description: json.results.books[i].description,
-            isbn: json.results.books[i].primary_isbn13
+            isbn: json.results.books[i].primary_isbn13,
+            book_image: json.results.book[i].book_image,
+            buy_links: json.results.book[i].buy_links[0].url,
           };
           tempList.push(temp);
         }
