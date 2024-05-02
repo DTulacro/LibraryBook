@@ -16,12 +16,12 @@ export default function Details({ route, navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.item}>Title: {title}</Text>
+        <Image source={cover} />
+        <Text style={styles.title}>{title}</Text>
         <Text style={styles.item}>Author: {author}</Text>
         <Text style={styles.item}>Description: {description}</Text>
         <Text style={styles.item}>ISBN: {isbn}</Text>
         <Button title="Purchase on Amazon.com" onPress={() => { Linking.openURL(buy_links).catch((err) => console.error('An error occurred', err)); }} />
-        <Image source={cover} />
       </View>
     </ScrollView>
   );
@@ -35,11 +35,20 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   item: {
-    padding: 10,
+    padding: 8,
     fontSize: 18,
+    fontFamily:'Times New Roman'
+  },
+  title:{
+    padding: 8,
+    fontSize: 24,
+    fontFamily:'Times New Roman',
+    alignItems:'center',
+    justifyContent:'center'
   },
   border: {
     borderWidth: 1,
     borderColor: "gray",
-  }
+  },
+  
 });  

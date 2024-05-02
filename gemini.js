@@ -23,13 +23,15 @@ export default function Gemini({ navigation }) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
       <ScrollView>
         <TextInput
-          style={{ height: 200, width: 300, borderColor: 'black', borderWidth: 1, backgroundColor: 'white', marginBottom: 20, borderRadius: 5 }}
+          style={{ height: 200, width: 300, borderColor: 'black', borderWidth: 1, backgroundColor: 'white', marginBottom: 5, borderRadius: 20 }}
           multiline={true}
           numberOfLines={10}
-          placeholder="Enter a prompt here"
+          placeholder=" Enter a prompt here (max 250 characters)"
           value={prompt}
           onChangeText={(text) => setPrompt(text)}
+          maxLength={250}
         />
+        <Text style={{ fontSize:12, marginBottom: 30 }}>Character count: {prompt.length}/250</Text>
         <TouchableOpacity onPress={handleSubmit} style={{ borderRadius: 5, backgroundColor: '#147EFB' }}>
           <View style={{ alignItems: 'center', padding: 10 }}>
             <Text style={{ color: 'white' }}>
@@ -37,7 +39,7 @@ export default function Gemini({ navigation }) {
             </Text>
           </View>
         </TouchableOpacity>
-        <Text style={{ marginTop: 20, width: 300, height: 500, backgroundColor: 'white', borderColor: 'black', borderWidth: 1, borderRadius: 5 }}>{response}</Text>
+        <Text style={{ marginTop: 20, width: 300, height: 500, backgroundColor: 'white', borderColor: 'black', borderWidth: 1, borderRadius: 20 }}>{response}</Text>
       </ScrollView>
     </View>
   );
